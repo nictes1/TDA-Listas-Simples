@@ -34,33 +34,8 @@ nodo *AgregarPricipio (nodo *lista, nodo *nuevo_nodo)
     return lista;
 }
 
-nodo *BuscarUltimoNodo (nodo *lista)
-{
-    nodo * seg = lista;
 
-    if(seg!=NULL)
-    {
-        seg = seg->siguiente;
-    }
-    return seg;
-}
-
-nodo *BuscarNodoEspecifico (nodo * lista , char nombre[20])
-{
-    nodo * seg;
-
-    if(seg!=NULL)
-    {
-        while(strcmp(nombre, seg->siguiente)!=0)
-        {
-            seg=seg->siguiente;
-        }
-    }
-
-    return seg;
-}
-
-nodo * AgregarFinal (nodo * lista, nodo * nuevonodo)
+nodo *AgregarFinal (nodo * lista, nodo * nuevonodo)
 {
    if(lista == NULL)
    {
@@ -76,37 +51,8 @@ nodo * AgregarFinal (nodo * lista, nodo * nuevonodo)
     return lista;
 }
 
-nodo * EliminarNodoBuscado (nodo * lista, char nombre[20])
-{
-   nodo * seg;
-   nodo * ante;
 
-   if((lista!=NULL)&& (strcmp(nombre,seg->dato.nombre))!=0)
-   {
-       nodo * aux = lista;
-
-       lista = lista->siguiente;
-       free(aux);
-   }
-   else
-   {
-     seg = lista;
-     while((lista!=NULL)&&(strcmp(nombre,seg->dato.nombre)!=0))
-     {
-         ante = seg;
-         seg=seg->siguiente;
-     }
-
-     if(seg!=NULL)
-     {
-         ante->siguiente = seg->siguiente;
-         free(seg);
-     }
-   }
-     return lista;
-}
-
-nodo * AgregarEnOrden (nodo * lista, nodo * nuevoNodo)
+nodo *AgregarEnOrden (nodo * lista, nodo * nuevoNodo)
 {
     if(lista==NULL)
     {
@@ -137,24 +83,33 @@ nodo * AgregarEnOrden (nodo * lista, nodo * nuevoNodo)
     }
     return lista;
 }
-
-nodo * BorrarAllList (nodo * lista)
+nodo *BuscarUltimoNodo (nodo *lista)
 {
-    nodo * proximo;
-    nodo * seg;
+    nodo * seg = lista;
 
-    seg = lista;
-
-    while (seg!=NULL)
+    if(seg!=NULL)
     {
-        proximo=seg->siguiente;
-        free(seg);
-        seg=proximo;
+        seg = seg->siguiente;
     }
     return seg;
 }
 
-nodo * SumarNodos (nodo * lista)
+nodo *BuscarNodoEspecifico (nodo * lista , char nombre[20])
+{
+    nodo * seg;
+
+    if(seg!=NULL)
+    {
+        while(strcmp(nombre, seg->siguiente)!=0)
+        {
+            seg=seg->siguiente;
+        }
+    }
+
+    return seg;
+}
+
+nodo *SumarNodos (nodo * lista)
 {
     nodo * seg = lista;
     int suma = 0;
@@ -168,6 +123,7 @@ nodo * SumarNodos (nodo * lista)
     return suma;
 }
 
+///Mostrar
 void MostrarNodo(nodo * aux)
 {
     if(aux!=NULL)
@@ -187,7 +143,8 @@ void MostrarLista(nodo * lista)
     }
 }
 
-nodo * DeleteFirstNode (nodo * lista)
+///Borrar
+nodo *BorrarPrimero (nodo * lista)
 {
     nodo * aux = lista;
     nodo * siguiente;
@@ -202,7 +159,7 @@ nodo * DeleteFirstNode (nodo * lista)
 }
 
 
-nodo * DeleteLatestNode (nodo * lista)   /// VERSION NOC SI ANDA
+nodo *BorraUltimo (nodo * lista)   /// VERSION NOC SI ANDA
 {
     nodo * ultimo;
     nodo * aux;
@@ -210,13 +167,59 @@ nodo * DeleteLatestNode (nodo * lista)   /// VERSION NOC SI ANDA
     ultimo = BuscarUltimoNodo(lista);
     aux = lista;
 
-    while((aux->siguiente == ultimo)
+    while(aux->siguiente == ultimo)
     {
         free(ultimo);
         aux->siguiente = NULL;
     }
 
     return aux;
+}
+
+nodo *BorrarAllList (nodo * lista)
+{
+    nodo * proximo;
+    nodo * seg;
+
+    seg = lista;
+
+    while (seg!=NULL)
+    {
+        proximo=seg->siguiente;
+        free(seg);
+        seg=proximo;
+    }
+    return seg;
+}
+
+nodo *EliminarNodoBuscado (nodo * lista, char nombre[20])
+{
+   nodo * seg;
+   nodo * ante;
+
+   if((lista!=NULL)&& (strcmp(nombre,seg->dato.nombre))!=0)
+   {
+       nodo * aux = lista;
+
+       lista = lista->siguiente;
+       free(aux);
+   }
+   else
+   {
+     seg = lista;
+     while((lista!=NULL)&&(strcmp(nombre,seg->dato.nombre)!=0))
+     {
+         ante = seg;
+         seg=seg->siguiente;
+     }
+
+     if(seg!=NULL)
+     {
+         ante->siguiente = seg->siguiente;
+         free(seg);
+     }
+   }
+     return lista;
 }
 
 

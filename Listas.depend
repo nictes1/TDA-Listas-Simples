@@ -23,3 +23,24 @@
 1599851822 source:n:\nico\programacion\segundo cuatrimestre\laboratorio y programacion 2\trabajos practicos\trabajos practicos\listas funciones\listas\listas\listasc.c
 	"Listas.h"
 
+1599852153 source:n:\nico\programacion\segundo cuatrimestre\laboratorio y programacion 2\trabajos practicos\trabajos practicos\tda listas simples\listas\listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"Listas.h"
+	"Persona.h"
+
+1601063415 n:\nico\programacion\segundo cuatrimestre\laboratorio y programacion 2\trabajos practicos\trabajos practicos\tda listas simples\listas\listas\listas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Listas.h"
+	"Persona.h"
+
+1599850570 n:\nico\programacion\segundo cuatrimestre\laboratorio y programacion 2\trabajos practicos\trabajos practicos\tda listas simples\listas\listas\persona.h
+	<stdio.h>
+	<stdlib.h>
+
+1599851989 source:n:\nico\programacion\segundo cuatrimestre\laboratorio y programacion 2\trabajos practicos\trabajos practicos\tda listas simples\listas\listas\persona.c
+	"Persona.h"
+
